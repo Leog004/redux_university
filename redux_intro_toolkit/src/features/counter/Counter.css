@@ -1,0 +1,29 @@
+.counter {
+    padding: 2rem;
+  }
+  
+  .counter__count {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .counter__controls, .counter__basic-controls, .counter__amount-controls {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+  
+  .counter__basic-controls, .counter__amount-controls {
+    width: 100%;
+  }
+  
+  input[type="number"] {
+    padding: 0.5rem;
+    margin: 2rem 0 0 0;
+  }
+  
+  button {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
