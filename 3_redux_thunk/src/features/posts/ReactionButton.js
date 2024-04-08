@@ -17,28 +17,25 @@ const ReactionButton = ({ post }) => {
         dispatch(reactionAdded({
             postId: id,
             reaction: name,
-        }))
+        }));
     };
-    
-    const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji]) => {
-        return (
-            <button
-                data-testid={`${name}`}
-                key={name}
-                type='button'
-                className='reactionButton'
-                onClick={() => handleReactionButtonOnClick(post.id, name)}
-            >
-              {emoji} {post.reactions[name]}
-            </button>
-        )
-    });
 
-    return (
-        <div>
-            {reactionButtons}
-        </div>
-    )
+    if (!post.reactions) {
+        return null; // Or render some fallback UI
+    }
+
+    const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji]) => (
+        <button
+            key={name}
+            type="button"
+            className="reactionButton"
+            onClick={() => handleReactionButtonOnClick(post.id, name)}
+        >
+            {emoji} {post.reactions[name]}
+        </button>
+    ));
+
+    return <div>{reactionButtons}</div>;
 }
 
 export default ReactionButton

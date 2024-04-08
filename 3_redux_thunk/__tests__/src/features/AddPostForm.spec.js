@@ -1,7 +1,7 @@
 import React from "react";
 import AddPostForm from "../../../src/features/posts/AddPostForm";
 import { Provider, useDispatch, useSelector } from "react-redux";
-import { screen, render, fireEvent, waitFor } from '@testing-library/react'
+import { screen, render, fireEvent } from '@testing-library/react'
 import { postAdded } from "../../../src/features/posts/postSlice";
 import { configureStore } from "@reduxjs/toolkit";
 import postSlice from "../../../src/features/posts/postSlice";
